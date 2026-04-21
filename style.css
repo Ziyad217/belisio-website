@@ -1330,6 +1330,12 @@ em { font-style: italic; }
 }
 
 @media (max-width: 767px) {
+  :root {
+    --space-xl:  3.5rem;
+    --space-2xl: 5.5rem;
+    --container-pad: 1.25rem;
+  }
+
   .nav__toggle { display: flex; }
 
   .nav__list {
@@ -1355,36 +1361,59 @@ em { font-style: italic; }
   .nav__link { font-size: var(--text-xl); letter-spacing: 0.08em; color: var(--color-paper); }
   .nav__link--cta { border-color: rgba(200,169,110,0.5); }
 
+  /* Hero */
+  h1 { font-size: clamp(2rem, 9.5vw, 3rem); }
+  .hero__content { padding-block: var(--space-lg) var(--space-md); }
+  .hero__sub { max-width: 100%; }
+  .hero__heading { max-width: 100%; }
+
+  /* Fix button text overflow */
+  .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+  .booking-bar__cta { white-space: normal; }
+
+  /* Hero actions */
+  .hero__actions { flex-direction: column; align-items: stretch; }
+
+  /* Booking bar */
+  .booking-bar { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+  .booking-bar__text { font-size: var(--text-xs); }
+
   /* Stats */
-  .stats-bar__list { grid-template-columns: repeat(2, 1fr); }
+  .stats-bar__list { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+  .stats-bar__item { padding-left: var(--space-sm); }
+
+  /* Section header */
+  .section-header { margin-bottom: var(--space-lg); }
+  .section-ghost { font-size: clamp(5rem, 28vw, 10rem); }
 
   /* Vorteile */
   .vorteile__list { grid-template-columns: 1fr; }
+  .vorteil-card { padding: var(--space-md); }
 
   /* Leistungen */
   .leistungen__list { grid-template-columns: 1fr; }
+  .leistung-item { padding: var(--space-md); }
 
   /* Über uns */
   .ueber-uns__body { grid-template-columns: 1fr; gap: var(--space-lg); }
   .ablauf__list { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .ablauf-step__num { font-size: 3rem; min-width: 2.5rem; }
 
-  /* Booking */
+  /* Booking widget */
+  .booking-step { padding: var(--space-md) var(--space-sm); }
   .booking-form__grid { grid-template-columns: 1fr; }
   .contact-form__grid { grid-template-columns: 1fr; }
+  .booking-calendar__grid { gap: 2px; }
+  .booking-calendar__weekdays { gap: 2px; }
+  .cal-day { min-height: 40px; font-size: var(--text-xs); }
 
-  /* Hero actions */
-  .hero__actions { flex-direction: column; align-items: flex-start; }
-  .btn { width: 100%; justify-content: center; }
+  /* Contact */
+  .contact-form { max-width: 100%; }
 
-  /* booking bar */
-  .booking-bar { flex-direction: column; align-items: flex-start; }
-
-  /* section ghost */
-  .section-ghost { font-size: clamp(5rem, 28vw, 10rem); }
-
-  /* footer */
+  /* Footer */
   .footer__top { flex-direction: column; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
+  .footer__nav { gap: var(--space-sm); }
 }
 
 @media (min-width: 1024px) {
