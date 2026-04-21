@@ -138,8 +138,20 @@
     'Januar','Februar','März','April','Mai','Juni',
     'Juli','August','September','Oktober','November','Dezember'
   ];
-  // Available time slots
-  const TIME_SLOTS = ['09:00','10:00','11:00','14:00','15:00','16:00','17:00'];
+  // Mo–Fr, jede halbe Stunde 08:00–16:30
+  const TIME_SLOTS = (() => {
+    const slots = [];
+    for (let h = 8; h <= 16; h++) {
+      slots.push(`${String(h).padStart(2,'0')}:00`);
+      if (h < 17) slots.push(`${String(h).padStart(2,'0')}:30`);
+    }
+    return slots; // 08:00 … 16:30
+  })();
+
+  function getSlotsForDate(date) {
+    const dow = date.getDay();
+    return (dow >= 1 && dow <= 5) ? TIME_SLOTS : [];
+  }
 
   const slotsCache = {};
 
@@ -151,7 +163,7 @@
       slotsCache[dateStr] = data;
       return data;
     } catch {
-      return { free: TIME_SLOTS, booked: [] };
+      return { booked: [] };
     }
   }
 
@@ -159,8 +171,7 @@
     const today = new Date();
     today.setHours(0,0,0,0);
     if (date < today) return false;
-    const dow = date.getDay();
-    return dow !== 0 && dow !== 6;
+    return getSlotsForDate(date).length > 0;
   }
 
   function toDateStr(date) {
@@ -309,16 +320,17 @@
     slotsGrid.innerHTML = '<p style="color:var(--color-muted);font-size:13px;padding:8px 0;">Lade Termine…</p>';
     goToStep(2);
 
-    const { free = TIME_SLOTS, booked = [] } = await fetchSlots(selectedDateStr);
+    const daySlots = getSlotsForDate(date);
+    const { booked = [] } = await fetchSlots(selectedDateStr);
 
     slotsGrid.innerHTML = '';
 
-    if (free.length === 0) {
+    if (daySlots.filter(s => !booked.includes(s)).length === 0) {
       slotsGrid.innerHTML = '<p style="color:var(--color-muted);font-size:13px;padding:8px 0;">Keine freien Termine an diesem Tag.</p>';
       return;
     }
 
-    TIME_SLOTS.forEach(slot => {
+    daySlots.forEach(slot => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.textContent = slot + ' Uhr';
