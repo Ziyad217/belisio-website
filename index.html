@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO Primary ─────────────────────────────────────── -->
+  <title>belisio – Webdesign Agentur Bremen | Landing Pages & SEO</title>
+  <meta name="description" content="belisio ist Ihre Webdesign Agentur in Bremen. Wir erstellen professionelle Landing Pages, Unternehmenswebseiten und SEO-Optimierung – für mehr Kunden und mehr Umsatz.">
+  <meta name="keywords" content="Webdesign Bremen, Webdesign Agentur Bremen, Landing Page Bremen, SEO Bremen, Webseite erstellen Bremen, Homepage erstellen Bremen">
+  <meta name="author" content="belisio Webdesign Bremen">
+  <link rel="canonical" href="https://belisio.de/">
+
+  <!-- ─── Open Graph ───────────────────────────────────────── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://belisio.de/">
+  <meta property="og:title"       content="belisio – Webdesign Agentur Bremen">
+  <meta property="og:description" content="Professionelle Landing Pages, Webseiten & SEO aus Bremen. Mehr Kunden durch besseres Web-Design. Kostenlosen Ersttermin vereinbaren.">
+  <meta property="og:locale"      content="de_DE">
+
+  <!-- ─── Schema.org Local Business ──────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "belisio",
+    "description": "Webdesign Agentur in Bremen – Landing Pages, Unternehmenswebseiten und SEO-Optimierung",
+    "url": "https://belisio.de",
+    "email": "kontakt@belisio.de",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bremen",
+      "addressRegion": "Bremen",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.0793,
+      "longitude": 8.8017
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Bremen" },
+      { "@type": "City", "name": "Hamburg" },
+      { "@type": "Country", "name": "Deutschland" }
+    ],
+    "priceRange": "€€",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Webdesign-Leistungen",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Page Design" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Unternehmenswebseite" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO-Optimierung" } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ─── Fonts ────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=DM+Mono:wght@300;400&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,600&family=DM+Mono:wght@300;400&display=swap">
+  </noscript>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- ─── HEADER ─────────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Hauptnavigation">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav__logo" aria-label="belisio – Startseite">
+        <span class="logo-wordmark">belisio<span class="logo-dot">.</span></span>
+      </a>
+
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav__list" id="nav-menu" role="list">
+        <li><a href="#leistungen"  class="nav__link">Leistungen</a></li>
+        <li><a href="#ueber-uns"   class="nav__link">Über uns</a></li>
+        <li><a href="#nachricht"   class="nav__link">Kontakt</a></li>
+        <li><a href="#termin"      class="nav__link nav__link--cta">Termin vereinbaren</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ─── HERO ───────────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="hero__eyebrow reveal" data-delay="0ms">
+          Webdesign Agentur Bremen
+        </p>
+
+        <h1 class="hero__heading reveal" id="hero-heading" data-delay="80ms">
+          Mehr Kunden.<br>
+          Mehr Umsatz.<br>
+          <em>Ihre neue Webseite.</em>
+        </h1>
+
+        <p class="hero__sub reveal" data-delay="180ms">
+          Wir bauen Landing Pages und Webseiten, die Besucher in Kunden verwandeln —
+          für Unternehmen in Bremen und ganz Deutschland.
+        </p>
+
+        <div class="hero__actions reveal" data-delay="280ms">
+          <a href="#termin" class="btn btn--primary">
+            Kostenlosen Ersttermin vereinbaren
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#leistungen" class="btn btn--ghost">Leistungen ansehen</a>
+        </div>
+      </div>
+
+      <div class="hero__booking-bar reveal" data-delay="400ms">
+        <div class="container">
+          <div class="booking-bar">
+            <div class="booking-bar__text">
+              <span class="booking-bar__label" aria-hidden="true">◆</span>
+              <span>Kostenloser Ersttermin — Wählen Sie direkt Ihren Wunschtermin</span>
+            </div>
+            <a href="#termin" class="booking-bar__cta">
+              Jetzt Termin wählen <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATS BAR ───────────────────────────────────────── -->
+    <section class="stats-bar section--paper" aria-label="Fakten über Online-Sichtbarkeit">
+      <div class="container">
+        <ul class="stats-bar__list" role="list">
+          <li class="stats-bar__item reveal" data-delay="0ms">
+            <span class="stats-bar__num">81%</span>
+            <span class="stats-bar__text">der Kunden recherchieren online, bevor sie kaufen</span>
+          </li>
+          <li class="stats-bar__item reveal" data-delay="80ms">
+            <span class="stats-bar__num">3 Sek.</span>
+            <span class="stats-bar__text">entscheiden, ob ein Besucher bleibt oder geht</span>
+          </li>
+          <li class="stats-bar__item reveal" data-delay="160ms">
+            <span class="stats-bar__num">75%</span>
+            <span class="stats-bar__text">beurteilen Glaubwürdigkeit anhand der Webseite</span>
+          </li>
+          <li class="stats-bar__item reveal" data-delay="240ms">
+            <span class="stats-bar__num">24/7</span>
+            <span class="stats-bar__text">für Sie im Einsatz — ohne Pause, ohne Urlaub</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── LEISTUNGEN ──────────────────────────────────────── -->
+    <section class="leistungen section--light" id="leistungen" aria-labelledby="leistungen-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-ghost" aria-hidden="true">01</span>
+          <div class="section-meta">
+            <span class="section-label">Unsere Leistungen</span>
+            <h2 class="section-heading reveal" id="leistungen-heading">
+              Was wir für Sie<br>
+              umsetzen.
+            </h2>
+          </div>
+        </div>
+
+        <ul class="leistungen__list" role="list">
+
+          <!-- Landing Pages -->
+          <li class="leistung-item reveal" data-delay="0ms">
+            <div class="leistung-item__head">
+              <div class="leistung-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <rect x="2" y="4" width="28" height="20" rx="2"/>
+                  <path d="M2 10h28"/>
+                  <circle cx="6" cy="7" r="1.2" fill="currentColor"/>
+                  <circle cx="10" cy="7" r="1.2" fill="currentColor"/>
+                  <path d="M8 16h16M10 20h12"/>
+                </svg>
+              </div>
+              <h3 class="leistung-item__title">Landing Pages</h3>
+            </div>
+            <p class="leistung-item__desc">
+              Eine Landing Page ist Ihr schärfstes Verkaufswerkzeug. Zielgerichtet,
+              klar strukturiert und auf Conversion optimiert — sie verwandelt Besucher
+              direkt in Anfragen, Käufe oder Kontakte.
+            </p>
+            <ul class="leistung-item__features" role="list" aria-label="Enthaltene Leistungen">
+              <li>Conversion-Optimierung</li>
+              <li>Klare Nutzerführung (UX)</li>
+              <li>Mobile-First Design</li>
+              <li>Schnelle Ladezeiten</li>
+              <li>A/B-Testvorbereitung</li>
+            </ul>
+          </li>
+
+          <!-- Unternehmenswebseite -->
+          <li class="leistung-item reveal" data-delay="100ms">
+            <div class="leistung-item__head">
+              <div class="leistung-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <rect x="2" y="2" width="28" height="28" rx="2"/>
+                  <path d="M2 12h28M12 2v28"/>
+                  <path d="M16 17h8M16 21h6"/>
+                </svg>
+              </div>
+              <h3 class="leistung-item__title">Unternehmenswebseiten</h3>
+            </div>
+            <p class="leistung-item__desc">
+              Ihr vollständiger digitaler Auftritt — vom Design bis zum Launch.
+              Maßgeschneidert für Ihr Unternehmen, Ihre Branche und Ihre Kunden.
+            </p>
+            <ul class="leistung-item__features" role="list" aria-label="Enthaltene Leistungen">
+              <li>Individuelles Design</li>
+              <li>Alle Unterseiten</li>
+              <li>Kontaktformular</li>
+              <li>CMS-Integration</li>
+            </ul>
+          </li>
+
+          <!-- SEO -->
+          <li class="leistung-item reveal" data-delay="200ms">
+            <div class="leistung-item__head">
+              <div class="leistung-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <circle cx="13" cy="13" r="9"/>
+                  <path d="M20 20l8 8"/>
+                  <path d="M9 13h8M13 9v8"/>
+                </svg>
+              </div>
+              <h3 class="leistung-item__title">SEO-Optimierung</h3>
+            </div>
+            <p class="leistung-item__desc">
+              Was nützt die schönste Webseite, wenn niemand sie findet?
+              Wir optimieren Ihre Seite für Google — damit Sie gefunden werden,
+              bevor Ihre Mitbewerber es werden.
+            </p>
+            <ul class="leistung-item__features" role="list" aria-label="Enthaltene Leistungen">
+              <li>Keyword-Analyse</li>
+              <li>On-Page SEO</li>
+              <li>Technisches SEO</li>
+              <li>Page-Speed Optimierung</li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── VORTEILE ────────────────────────────────────────── -->
+    <section class="vorteile section--dark" id="vorteile" aria-labelledby="vorteile-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-ghost" aria-hidden="true">02</span>
+          <div class="section-meta">
+            <span class="section-label">Warum eine neue Webseite?</span>
+            <h2 class="section-heading reveal" id="vorteile-heading">
+              Ihre Webseite ist Ihr<br>
+              bester Verkäufer.
+            </h2>
+          </div>
+        </div>
+
+        <ul class="vorteile__list" role="list">
+          <li class="vorteil-card reveal" data-delay="0ms">
+            <div class="vorteil-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <circle cx="20" cy="20" r="12"/>
+                <path d="M29 29l9 9"/>
+              </svg>
+            </div>
+            <h3 class="vorteil-card__title">Mehr gefunden werden</h3>
+            <p class="vorteil-card__desc">
+              Eine optimierte Webseite verbessert Ihre Google-Sichtbarkeit.
+              Ihre Kunden finden Sie — bevor Ihre Mitbewerber.
+            </p>
+          </li>
+          <li class="vorteil-card reveal" data-delay="80ms">
+            <div class="vorteil-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M8 36V18l16-10 16 10v18H8z"/>
+                <rect x="18" y="28" width="12" height="8"/>
+              </svg>
+            </div>
+            <h3 class="vorteil-card__title">Vertrauen aufbauen</h3>
+            <p class="vorteil-card__desc">
+              Ihr erster Eindruck entscheidet. Eine hochwertige Webseite
+              signalisiert Professionalität und schafft sofortiges Vertrauen.
+            </p>
+          </li>
+          <li class="vorteil-card reveal" data-delay="160ms">
+            <div class="vorteil-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M12 40V24M20 40V16M28 40V20M36 40V8"/>
+              </svg>
+            </div>
+            <h3 class="vorteil-card__title">Mehr Anfragen generieren</h3>
+            <p class="vorteil-card__desc">
+              Klare Struktur, starke Texte, gezielte Handlungsaufforderungen.
+              Ihre Webseite verwandelt Besucher in echte Anfragen und Aufträge.
+            </p>
+          </li>
+          <li class="vorteil-card reveal" data-delay="240ms">
+            <div class="vorteil-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="6" y="10" width="36" height="28" rx="2"/>
+                <path d="M6 18h36"/>
+                <circle cx="14" cy="14" r="2" fill="currentColor"/>
+                <circle cx="22" cy="14" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="vorteil-card__title">Auf allen Geräten perfekt</h3>
+            <p class="vorteil-card__desc">
+              Über 60 % der Besuche erfolgen mobil. Wir bauen Webseiten,
+              die auf jedem Gerät fehlerfrei aussehen und funktionieren.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── ÜBER UNS ────────────────────────────────────────── -->
+    <section class="ueber-uns section--light" id="ueber-uns" aria-labelledby="ueber-uns-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-ghost" aria-hidden="true">03</span>
+          <div class="section-meta">
+            <span class="section-label">Über belisio</span>
+            <h2 class="section-heading reveal" id="ueber-uns-heading">
+              Webdesign aus Bremen.<br>
+              <em>Persönlich &amp; direkt.</em>
+            </h2>
+          </div>
+        </div>
+
+        <div class="ueber-uns__body">
+          <div class="ueber-uns__statement reveal">
+            <p>
+              Wir glauben: Jedes Unternehmen verdient eine Webseite,
+              die wirklich für sich arbeitet.
+            </p>
+          </div>
+          <div class="ueber-uns__text reveal" data-delay="80ms">
+            <p>
+              Kein Callcenter, keine anonymen Tickets. Bei belisio haben Sie
+              einen persönlichen Ansprechpartner — von der ersten Idee bis zum
+              Launch und darüber hinaus.
+            </p>
+            <p>
+              Jede Webseite, die wir entwickeln, ist sorgfältig durchdacht —
+              in Struktur, Inhalt und Gestaltung. Unser Anspruch: Qualität,
+              die man sieht, und Ergebnisse, die man misst.
+            </p>
+          </div>
+        </div>
+
+        <!-- Ablauf integriert in Über uns -->
+        <div class="ablauf-inline">
+          <h3 class="ablauf-inline__title reveal">So arbeiten wir:</h3>
+          <ol class="ablauf__list" aria-label="Ablauf eines Projekts">
+            <li class="ablauf-step reveal" data-delay="0ms">
+              <div class="ablauf-step__num" aria-hidden="true">01</div>
+              <div class="ablauf-step__body">
+                <h4 class="ablauf-step__title">Kostenloses Erstgespräch</h4>
+                <p class="ablauf-step__desc">Wir lernen uns kennen, verstehen Ihr Unternehmen und Ihre Ziele. Kein Verkaufsgespräch — echte Beratung.</p>
+                <a href="#termin" class="ablauf-step__link">Termin vereinbaren →</a>
+              </div>
+            </li>
+            <li class="ablauf-step reveal" data-delay="80ms">
+              <div class="ablauf-step__num" aria-hidden="true">02</div>
+              <div class="ablauf-step__body">
+                <h4 class="ablauf-step__title">Konzept &amp; Angebot</h4>
+                <p class="ablauf-step__desc">Transparentes Angebot auf Basis Ihrer Anforderungen — keine versteckten Kosten.</p>
+              </div>
+            </li>
+            <li class="ablauf-step reveal" data-delay="160ms">
+              <div class="ablauf-step__num" aria-hidden="true">03</div>
+              <div class="ablauf-step__body">
+                <h4 class="ablauf-step__title">Design &amp; Entwicklung</h4>
+                <p class="ablauf-step__desc">Wir bauen Ihre Webseite mit regelmäßigen Updates. Sie behalten die volle Kontrolle.</p>
+              </div>
+            </li>
+            <li class="ablauf-step reveal" data-delay="240ms">
+              <div class="ablauf-step__num" aria-hidden="true">04</div>
+              <div class="ablauf-step__body">
+                <h4 class="ablauf-step__title">Launch &amp; Übergabe</h4>
+                <p class="ablauf-step__desc">Ihre Seite geht live. Wir begleiten Sie in den ersten Wochen — damit Sie sofort durchstarten.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TERMIN & KONTAKT ────────────────────────────────── -->
+    <section class="termin section--paper" id="termin" aria-labelledby="termin-heading">
+
+      <div class="container">
+        <div class="section-header">
+          <span class="section-ghost" aria-hidden="true">04</span>
+          <div class="section-meta">
+            <span class="section-label">Kostenloses Erstgespräch</span>
+            <h2 class="section-heading reveal" id="termin-heading">
+              Wählen Sie Ihren<br>
+              <em>Wunschtermin.</em>
+            </h2>
+          </div>
+        </div>
+
+        <p class="termin__intro reveal">
+          Vereinbaren Sie jetzt Ihr kostenloses und unverbindliches Erstgespräch (30 Min.)
+          direkt online. Wählen Sie einen freien Tag und eine passende Uhrzeit.
+        </p>
+
+        <!-- Booking Widget -->
+        <div class="booking-widget reveal" id="booking-widget" data-delay="100ms" aria-label="Terminbuchung">
+
+          <div class="booking-step booking-step--calendar is-active" id="booking-step-1" aria-label="Schritt 1: Datum auswählen">
+            <div class="booking-calendar">
+              <div class="booking-calendar__header">
+                <button class="booking-nav-btn" id="cal-prev" aria-label="Vorheriger Monat">‹</button>
+                <span class="booking-calendar__month" id="cal-month" aria-live="polite"></span>
+                <button class="booking-nav-btn" id="cal-next" aria-label="Nächster Monat">›</button>
+              </div>
+              <div class="booking-calendar__weekdays" aria-hidden="true">
+                <span>Mo</span><span>Di</span><span>Mi</span>
+                <span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
+              </div>
+              <div class="booking-calendar__grid" id="cal-grid" role="grid" aria-label="Kalender — wählen Sie einen verfügbaren Tag"></div>
+            </div>
+          </div>
+
+          <div class="booking-step booking-step--slots" id="booking-step-2" hidden aria-label="Schritt 2: Uhrzeit auswählen">
+            <div class="booking-slots__header">
+              <button class="booking-back-btn" id="slots-back" aria-label="Zurück zur Kalenderauswahl">← Datum ändern</button>
+              <p class="booking-slots__date" id="slots-date"></p>
+            </div>
+            <p class="booking-slots__label">Verfügbare Uhrzeiten:</p>
+            <div class="booking-slots__grid" id="slots-grid" role="group" aria-label="Verfügbare Zeitfenster"></div>
+          </div>
+
+          <div class="booking-step booking-step--form" id="booking-step-3" hidden aria-label="Schritt 3: Ihre Kontaktdaten">
+            <div class="booking-form__header">
+              <button class="booking-back-btn" id="form-back" aria-label="Zurück zur Zeitauswahl">← Uhrzeit ändern</button>
+              <p class="booking-form__selection" id="form-selection"></p>
+            </div>
+            <form class="booking-form" id="booking-form" novalidate aria-label="Terminbuchungsformular">
+              <div class="booking-form__grid">
+                <div class="form-field">
+                  <label for="b-name" class="form-label">Ihr Name *</label>
+                  <input type="text" id="b-name" name="name" class="form-input" autocomplete="name" required aria-required="true">
+                </div>
+                <div class="form-field">
+                  <label for="b-company" class="form-label">Unternehmen</label>
+                  <input type="text" id="b-company" name="company" class="form-input" autocomplete="organization">
+                </div>
+                <div class="form-field">
+                  <label for="b-email" class="form-label">E-Mail-Adresse *</label>
+                  <input type="email" id="b-email" name="email" class="form-input" autocomplete="email" required aria-required="true">
+                </div>
+                <div class="form-field">
+                  <label for="b-phone" class="form-label">Telefonnummer</label>
+                  <input type="tel" id="b-phone" name="phone" class="form-input" autocomplete="tel">
+                </div>
+                <div class="form-field form-field--full">
+                  <label for="b-project" class="form-label">Kurz zu Ihrem Projekt (optional)</label>
+                  <textarea id="b-project" name="project" class="form-input form-input--textarea" rows="3"
+                    placeholder="z.B. Ich suche eine Landing Page für mein Unternehmen..."></textarea>
+                </div>
+                <div class="form-field form-field--full form-field--submit">
+                  <button type="submit" class="btn btn--primary">
+                    Termin buchen
+                    <span class="btn__arrow" aria-hidden="true">→</span>
+                  </button>
+                  <p class="form-disclaimer">Kostenlos &amp; unverbindlich. Keine Weitergabe Ihrer Daten an Dritte.</p>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="booking-step booking-step--confirm" id="booking-step-4" hidden aria-label="Terminbestätigung" role="status" aria-live="polite">
+            <div class="booking-confirm">
+              <div class="booking-confirm__icon" aria-hidden="true">✓</div>
+              <h3 class="booking-confirm__title">Termin bestätigt!</h3>
+              <p class="booking-confirm__text" id="confirm-text"></p>
+              <p class="booking-confirm__sub">Eine Bestätigung geht Ihnen per E-Mail zu. Wir freuen uns auf das Gespräch.</p>
+            </div>
+          </div>
+
+          <div class="booking-progress" aria-label="Buchungsfortschritt">
+            <div class="booking-progress__steps">
+              <span class="booking-progress__step is-active" data-step="1">Datum</span>
+              <span class="booking-progress__divider" aria-hidden="true">→</span>
+              <span class="booking-progress__step" data-step="2">Uhrzeit</span>
+              <span class="booking-progress__divider" aria-hidden="true">→</span>
+              <span class="booking-progress__step" data-step="3">Bestätigen</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact anchor + message form -->
+        <div class="contact-section reveal" id="nachricht" data-delay="200ms">
+          <div class="contact-section__divider" aria-hidden="true"></div>
+          <div class="contact-section__intro">
+            <span class="section-label">Direkter Kontakt</span>
+            <h3 class="contact-section__heading">Lieber eine Nachricht schreiben?</h3>
+            <p class="contact-section__sub">
+              Kein Problem — schreiben Sie uns direkt:
+              <a href="mailto:kontakt@belisio.de" class="contact-email-inline" aria-label="E-Mail an kontakt@belisio.de senden">kontakt@belisio.de</a>
+            </p>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate aria-label="Kontaktformular">
+            <div class="contact-form__grid">
+              <div class="form-field">
+                <label for="c-name" class="form-label">Ihr Name *</label>
+                <input type="text" id="c-name" name="name" class="form-input form-input--light" autocomplete="name" required aria-required="true">
+              </div>
+              <div class="form-field">
+                <label for="c-email" class="form-label">E-Mail-Adresse *</label>
+                <input type="email" id="c-email" name="email" class="form-input form-input--light" autocomplete="email" required aria-required="true">
+              </div>
+              <div class="form-field form-field--full">
+                <label for="c-message" class="form-label">Ihre Nachricht *</label>
+                <textarea id="c-message" name="message" class="form-input form-input--light form-input--textarea" rows="5"
+                  placeholder="Beschreiben Sie kurz, womit wir Ihnen helfen können..." required aria-required="true"></textarea>
+              </div>
+              <div class="form-field form-field--full form-field--submit">
+                <button type="submit" class="btn btn--primary">
+                  Nachricht senden
+                  <span class="btn__arrow" aria-hidden="true">→</span>
+                </button>
+                <p class="form-disclaimer form-disclaimer--dark">Kostenlos &amp; unverbindlich. Keine Weitergabe Ihrer Daten.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────── -->
+  <footer class="site-footer section--dark" role="contentinfo">
+    <div class="footer__inner container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#hero" class="footer__logo-link" aria-label="belisio – zurück nach oben">
+            <span class="footer__logo">belisio<span class="logo-dot">.</span></span>
+          </a>
+          <p class="footer__tagline">Webdesign Agentur Bremen</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer-Navigation">
+          <a href="#leistungen" class="footer__link">Leistungen</a>
+          <a href="#ueber-uns"  class="footer__link">Über uns</a>
+          <a href="#termin"     class="footer__link">Termin vereinbaren</a>
+          <a href="mailto:kontakt@belisio.de" class="footer__link">kontakt@belisio.de</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© belisio. Alle Rechte vorbehalten.</p>
+        <div class="footer__legal">
+          <a href="impressum.html"   class="footer__link">Impressum</a>
+          <a href="datenschutz.html" class="footer__link">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
