@@ -132,7 +132,7 @@
    * Anleitung: booking-backend.gs im Projekt-Ordner lesen.
    * Beispiel: 'https://script.google.com/macros/s/AKfycb.../exec'
    */
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-2YImvWAZCEfjlCY5fkyfLCu1dUCaSDH847vo9qdKuWp7S1tLFY7uI8gNgKXKITNE/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5ovCZ6qgjwza8xTdx8-qe2MbOth-tys_sa7VTfHa6wqY3sxvo_WKJCmPY_XqgyDEXtA/exec';
 
   const MONTHS_DE = [
     'Januar','Februar','März','April','Mai','Juni',
