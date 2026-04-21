@@ -1,0 +1,13 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="belisio">
+  <!-- Mark: stylized lowercase b — stem + half-circle bowl + accent dot -->
+  <g class="logo-mark">
+    <!-- Stem -->
+    <line x1="8" y1="4" x2="8" y2="36" stroke="#C8A96E" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- Bowl: half-circle from mid-stem to bottom -->
+    <path d="M8 16 A11 10 0 0 1 8 36" stroke="#C8A96E" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <!-- Small accent dot at top of stem -->
+    <circle cx="8" cy="7" r="2" fill="#C8A96E" opacity="0.5"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="28" y="29" font-family="'Cormorant Garamond', Georgia, serif" font-size="22" font-weight="400" letter-spacing="0.04em" fill="#F5F0E8">belisio</text>
+</svg>

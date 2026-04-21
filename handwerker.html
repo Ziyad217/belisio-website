@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hanno Goens – Ihr Allround-Handwerker in Bremen. Reparaturen, Montagen, Sanitär & mehr. Schnell, zuverlässig, fair. Jetzt per WhatsApp anfragen!">
+  <title>Hanno Goens – Handwerker für Reparaturen in Bremen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <style>
+    /* ── DEMO BANNER ────────────────────────────────── */
+    .demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: linear-gradient(90deg, #7c3aed, #6d28d9);
+      color: #fff; font-family: var(--font);
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      padding: 10px 48px 10px 24px; font-size: .8125rem; font-weight: 500;
+      line-height: 1.4; text-align: center;
+    }
+    .demo-bar__badge {
+      background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.35);
+      border-radius: 4px; padding: 2px 8px;
+      font-size: .75rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; flex-shrink: 0;
+    }
+    .demo-bar__close {
+      position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: rgba(255,255,255,.7);
+      cursor: pointer; font-size: 1.125rem; line-height: 1; padding: 4px;
+      transition: color .15s;
+    }
+    .demo-bar__close:hover { color: #fff; }
+    body.has-demo-bar .nav  { top: 41px; }
+    body.has-demo-bar .hero { padding-top: 41px; }
+
+    /* ── TOKENS ──────────────────────────────────────── */
+    :root {
+      --navy:      #0d1f3c;
+      --navy-mid:  #1a3a6c;
+      --blue:      #1e4fa0;
+      --orange:    #f97316;
+      --orange-h:  #ea6c0a;
+      --green:     #25d366;
+      --surface:   #f1f5f9;
+      --white:     #ffffff;
+      --text:      #1e293b;
+      --muted:     #64748b;
+      --border:    #e2e8f0;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.10), 0 1px 4px rgba(0,0,0,.06);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.07);
+      --container: 1180px;
+      --font:      'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    /* ── RESET ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font); color: var(--text); background: var(--white);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .skip-link {
+      position: absolute; top: -999px; left: 8px;
+      background: var(--orange); color: var(--white);
+      padding: 8px 16px; border-radius: var(--radius-sm);
+      font-weight: 600; z-index: 9999;
+    }
+    .skip-link:focus { top: 8px; }
+
+    .container {
+      width: 100%; max-width: var(--container);
+      margin: 0 auto; padding: 0 24px;
+    }
+
+    /* ── BUTTONS ─────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 50px;
+      font-size: 1rem; font-weight: 700; line-height: 1;
+      transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+      white-space: nowrap;
+    }
+    .btn:hover  { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn--primary {
+      background: var(--orange); color: var(--white);
+      box-shadow: 0 4px 16px rgba(249,115,22,.35);
+    }
+    .btn--primary:hover { background: var(--orange-h); box-shadow: 0 6px 24px rgba(249,115,22,.45); }
+    .btn--outline {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .btn--outline:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+    .btn--dark   { background: var(--navy); color: var(--white); }
+    .btn--dark:hover { background: var(--navy-mid); }
+    .btn--white  { background: white; color: var(--orange); }
+    .btn--white:hover { background: #f1f5f9; }
+    .btn--wa {
+      background: var(--green); color: var(--white);
+      box-shadow: 0 4px 16px rgba(37,211,102,.35);
+    }
+    .btn--wa:hover { background: #1ebe5d; box-shadow: 0 6px 24px rgba(37,211,102,.45); }
+
+    /* ── SECTION SHARED ──────────────────────────────── */
+    .section { padding: 96px 0; }
+    .section--alt  { background: var(--surface); }
+    .section--navy { background: var(--navy); color: var(--white); }
+
+    .section-tag {
+      display: inline-block; font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+    }
+    .section-heading {
+      font-size: clamp(1.75rem, 4vw, 2.625rem);
+      font-weight: 800; line-height: 1.15; color: var(--navy);
+    }
+    .section-heading--light { color: var(--white); }
+    .section-sub { margin-top: 16px; font-size: 1.0625rem; color: var(--muted); max-width: 540px; }
+    .section-sub--light { color: rgba(255,255,255,.7); }
+    .section-header { margin-bottom: 56px; }
+    .section-header--center { text-align: center; }
+    .section-header--center .section-sub { margin: 16px auto 0; }
+
+    /* ── REVEAL ──────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ════════ NAV ══════════════════════════════════════ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background .3s ease, box-shadow .3s ease;
+    }
+    .nav.is-scrolled {
+      background: rgba(13,31,60,.96); backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.08);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between; height: 72px;
+    }
+    .nav__logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.125rem; font-weight: 800; color: var(--white);
+    }
+    .nav__logo-icon {
+      width: 36px; height: 36px; background: var(--orange);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .nav__logo-icon svg { width: 20px; height: 20px; stroke: white; fill: none; stroke-width: 2; }
+    .nav__links { display: flex; align-items: center; gap: 28px; }
+    .nav__link {
+      font-size: .9375rem; font-weight: 500; color: rgba(255,255,255,.8);
+      transition: color .15s;
+    }
+    .nav__link:hover { color: var(--white); }
+    .nav__wa {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--green); color: white;
+      padding: 9px 18px; border-radius: 50px;
+      font-size: .875rem; font-weight: 700;
+      transition: background .15s, transform .15s;
+    }
+    .nav__wa:hover { background: #1ebe5d; transform: translateY(-1px); }
+    .nav__wa svg { width: 16px; height: 16px; fill: white; }
+    .nav__toggle { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav__toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: .2s; }
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__links.is-open {
+        display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: rgba(13,31,60,.98); backdrop-filter: blur(16px);
+        padding: 28px 24px; border-top: 1px solid rgba(255,255,255,.1);
+      }
+      .nav__toggle { display: flex; }
+    }
+
+    /* ════════ HERO ═════════════════════════════════════ */
+    .hero {
+      min-height: 100dvh; position: relative;
+      background: linear-gradient(135deg, #0d1f3c 0%, #0f2d5a 50%, #0d1f3c 100%);
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(249,115,22,.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(30,79,160,.3) 0%, transparent 45%),
+        radial-gradient(circle at 60% 80%, rgba(249,115,22,.07) 0%, transparent 40%);
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    .hero__content {
+      position: relative; z-index: 1;
+      padding: 120px 0 80px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .hero__tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(249,115,22,.15); border: 1px solid rgba(249,115,22,.3);
+      color: #fdba74; border-radius: 50px;
+      padding: 6px 14px; font-size: .8125rem; font-weight: 600; margin-bottom: 20px;
+    }
+    .hero__tag span { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+    .hero__heading {
+      font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+      font-weight: 800; line-height: 1.1; color: var(--white); letter-spacing: -.02em;
+    }
+    .hero__heading em { font-style: normal; color: var(--orange); }
+    .hero__sub {
+      margin-top: 20px; font-size: 1.0625rem;
+      color: rgba(255,255,255,.7); max-width: 440px; line-height: 1.7;
+    }
+    .hero__actions { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero__trust {
+      margin-top: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .hero__trust-item {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.6); font-size: .875rem;
+    }
+    .hero__trust-item svg { width: 15px; height: 15px; stroke: var(--orange); fill: none; stroke-width: 2.5; flex-shrink: 0; }
+
+    /* Hero visual */
+    .hero__visual { display: flex; justify-content: center; align-items: center; }
+    .hero__card-stack { position: relative; width: 340px; height: 360px; }
+    .hero__card {
+      position: absolute; background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(8px);
+      border-radius: var(--radius-lg); padding: 24px;
+    }
+    .hero__card--main { width: 300px; top: 30px; left: 20px; background: rgba(255,255,255,.1); }
+    .hero__card--stat { width: 170px; bottom: 10px; right: 0; background: var(--green); }
+    .hero__card-icon {
+      width: 46px; height: 46px; background: var(--orange); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+    .hero__card-icon svg { width: 22px; height: 22px; stroke: white; fill: none; stroke-width: 2; }
+    .hero__card-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .hero__card-sub   { font-size: .8rem; color: rgba(255,255,255,.65); }
+    .hero__card--stat .hero__card-icon { background: rgba(255,255,255,.25); }
+    .hero__card--stat .hero__card-title { font-size: 1.75rem; }
+    .hero__card--stat .hero__card-sub   { color: rgba(255,255,255,.85); }
+    .hero__rating { display: flex; gap: 3px; margin-top: 10px; }
+    .hero__star { color: #fbbf24; }
+    @media (max-width: 900px) {
+      .hero__content { grid-template-columns: 1fr; gap: 32px; }
+      .hero__visual   { display: none; }
+    }
+
+    /* ════════ STATS ════════════════════════════════════ */
+    .stats { background: var(--orange); }
+    .stats__list { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stats__item {
+      padding: 32px 20px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .stats__item:last-child { border-right: none; }
+    .stats__num { display: block; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; color: var(--white); line-height: 1; }
+    .stats__label { display: block; margin-top: 6px; font-size: .8125rem; font-weight: 500; color: rgba(255,255,255,.85); }
+    @media (max-width: 768px) {
+      .stats__list { grid-template-columns: repeat(2, 1fr); }
+      .stats__item { border-bottom: 1px solid rgba(255,255,255,.2); }
+      .stats__item:nth-child(2) { border-right: none; }
+      .stats__item:nth-last-child(-n+2) { border-bottom: none; }
+    }
+
+    /* ════════ SERVICES ═════════════════════════════════ */
+    .services { background: var(--surface); }
+    .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 32px 28px; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-card__icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, #fff3ea, #ffe4cc);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    }
+    .service-card__icon svg { width: 28px; height: 28px; stroke: var(--orange); fill: none; stroke-width: 1.8; }
+    .service-card__title { font-size: 1.0625rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .service-card__desc  { font-size: .9375rem; color: var(--muted); line-height: 1.65; }
+    @media (max-width: 900px) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .services__grid { grid-template-columns: 1fr; } }
+
+    /* ════════ WHY ══════════════════════════════════════ */
+    .why { background: var(--white); }
+    .why__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .why__list { display: flex; flex-direction: column; gap: 28px; margin-top: 36px; }
+    .why-item { display: flex; gap: 18px; }
+    .why-item__icon {
+      width: 46px; height: 46px; flex-shrink: 0;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .why-item__icon svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 2; }
+    .why-item__title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .why-item__desc  { font-size: .9375rem; color: var(--muted); line-height: 1.65; }
+    .why__visual {
+      background: linear-gradient(145deg, var(--navy), var(--navy-mid));
+      border-radius: var(--radius-lg); padding: 40px;
+      color: var(--white); position: relative; overflow: hidden;
+    }
+    .why__visual::after {
+      content: ''; position: absolute; bottom: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(249,115,22,.2), transparent 70%);
+    }
+    .why__visual-heading { font-size: 1.125rem; font-weight: 700; margin-bottom: 20px; }
+    .why__checklist { display: flex; flex-direction: column; gap: 13px; }
+    .why__check { display: flex; gap: 12px; align-items: flex-start; font-size: .9375rem; color: rgba(255,255,255,.85); }
+    .why__check-icon {
+      width: 22px; height: 22px; flex-shrink: 0; background: var(--orange);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 1px;
+    }
+    .why__check-icon svg { width: 12px; height: 12px; stroke: white; stroke-width: 3; fill: none; }
+    .why__cta { margin-top: 32px; }
+    @media (max-width: 900px) { .why__grid { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* ════════ PROCESS ══════════════════════════════════ */
+    .process { background: var(--surface); }
+    .process__steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 32px; position: relative;
+    }
+    .process__steps::before {
+      content: ''; position: absolute; top: 32px;
+      left: calc(12.5% + 16px); right: calc(12.5% + 16px);
+      height: 2px; background: linear-gradient(90deg, var(--orange), var(--navy-mid)); z-index: 0;
+    }
+    .process-step { text-align: center; position: relative; z-index: 1; }
+    .process-step__num {
+      width: 64px; height: 64px; margin: 0 auto 20px;
+      background: var(--white); border: 3px solid var(--orange); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 800; color: var(--orange); box-shadow: var(--shadow-md);
+    }
+    .process-step__title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .process-step__desc  { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+    @media (max-width: 768px) {
+      .process__steps { grid-template-columns: 1fr; gap: 24px; }
+      .process__steps::before { display: none; }
+      .process-step { display: flex; gap: 20px; text-align: left; align-items: flex-start; }
+      .process-step__num { width: 52px; height: 52px; flex-shrink: 0; margin: 0; }
+    }
+
+    /* ════════ TESTIMONIALS ═════════════════════════════ */
+    .testimonials { background: var(--navy); }
+    .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md); padding: 32px; transition: background .2s;
+    }
+    .testimonial-card:hover { background: rgba(255,255,255,.09); }
+    .testimonial-card__stars { display: flex; gap: 2px; margin-bottom: 16px; }
+    .testimonial-card__stars span { color: #fbbf24; }
+    .testimonial-card__text {
+      font-size: .9375rem; color: rgba(255,255,255,.85);
+      line-height: 1.7; font-style: italic; margin-bottom: 24px;
+    }
+    .testimonial-card__author { display: flex; align-items: center; gap: 14px; }
+    .testimonial-card__avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), #fb923c);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem; font-weight: 700; color: white; flex-shrink: 0;
+    }
+    .testimonial-card__name     { font-size: .9375rem; font-weight: 700; color: var(--white); }
+    .testimonial-card__location { font-size: .8125rem; color: rgba(255,255,255,.5); margin-top: 2px; }
+    @media (max-width: 900px) {
+      .testimonials__grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+    }
+
+    /* ════════ CTA BANNER ═══════════════════════════════ */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--orange) 0%, #fb923c 100%);
+      padding: 72px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cta-banner__content { position: relative; z-index: 1; }
+    .cta-banner__heading { font-size: clamp(1.625rem, 4vw, 2.5rem); font-weight: 800; color: var(--white); line-height: 1.2; }
+    .cta-banner__sub { margin: 16px auto 36px; font-size: 1.0625rem; color: rgba(255,255,255,.9); max-width: 500px; }
+    .cta-banner__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ════════ CONTACT ══════════════════════════════════ */
+    .contact { background: var(--white); }
+    .contact__grid { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+    .contact__info { display: flex; flex-direction: column; gap: 28px; }
+    .contact__info-heading { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .contact__info-sub     { color: var(--muted); font-size: .9375rem; line-height: 1.65; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-item__icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: linear-gradient(135deg, #fff3ea, #ffe4cc);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-item__icon svg { width: 20px; height: 20px; stroke: var(--orange); fill: none; stroke-width: 2; }
+    .contact-item__label { font-size: .8125rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .contact-item__val { font-size: 1rem; font-weight: 700; color: var(--navy); margin-top: 2px; }
+    .contact-item__val a { color: var(--navy); transition: color .15s; }
+    .contact-item__val a:hover { color: var(--orange); }
+    .contact-item__hint { font-size: .8125rem; color: var(--muted); margin-top: 3px; }
+
+    /* WhatsApp preferred badge */
+    .wa-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #dcfce7; border: 1px solid #86efac;
+      color: #15803d; border-radius: 50px;
+      padding: 4px 12px; font-size: .8rem; font-weight: 600;
+    }
+    .wa-badge svg { width: 14px; height: 14px; fill: #16a34a; }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: .875rem; font-weight: 600; color: var(--text); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 12px 16px;
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm); font-family: var(--font);
+      font-size: .9375rem; color: var(--text); outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--orange); box-shadow: 0 0 0 3px rgba(249,115,22,.15);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-disclaimer { font-size: .8125rem; color: var(--muted); text-align: center; }
+    @media (max-width: 900px) { .contact__grid { grid-template-columns: 1fr; gap: 48px; } }
+    @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+    /* ════════ WHATSAPP FLOAT ═══════════════════════════ */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 24px; z-index: 200;
+      display: flex; align-items: center; gap: 10px;
+      background: var(--green); color: white;
+      padding: 12px 20px 12px 16px; border-radius: 50px;
+      font-size: .9375rem; font-weight: 700;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,.5); }
+    .wa-float svg { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
+    @media (max-width: 480px) { .wa-float span { display: none; } .wa-float { padding: 14px; border-radius: 50%; } }
+
+    /* ════════ FOOTER ═══════════════════════════════════ */
+    .footer { background: #080f1e; padding: 64px 0 32px; }
+    .footer__top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer__logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.0625rem; font-weight: 800; color: var(--white); margin-bottom: 12px;
+    }
+    .footer__logo-mark {
+      width: 32px; height: 32px; background: var(--orange); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer__logo-mark svg { width: 18px; height: 18px; stroke: white; fill: none; stroke-width: 2.2; }
+    .footer__brand p { color: rgba(255,255,255,.5); font-size: .875rem; line-height: 1.7; max-width: 280px; }
+    .footer__col-title { font-size: .875rem; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .footer__links { display: flex; flex-direction: column; gap: 10px; }
+    .footer__link { font-size: .875rem; color: rgba(255,255,255,.5); transition: color .15s; }
+    .footer__link:hover { color: var(--white); }
+    .footer__bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__copy { font-size: .8125rem; color: rgba(255,255,255,.35); }
+    .footer__legal { display: flex; gap: 24px; }
+    .footer__legal a { font-size: .8125rem; color: rgba(255,255,255,.35); transition: color .15s; }
+    .footer__legal a:hover { color: rgba(255,255,255,.7); }
+    @media (max-width: 900px) { .footer__top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .footer__top { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+  <!-- DEMO BANNER -->
+  <div class="demo-bar" id="demo-bar" role="banner" aria-label="Demo-Hinweis">
+    <span class="demo-bar__badge">DEMO</span>
+    <span>
+      Unverbindliche Vorschau für Hanno Goens – Platzhaltertexte &amp; Bewertungen werden durch echte Inhalte ersetzt.
+    </span>
+    <button class="demo-bar__close" id="demo-close" aria-label="Hinweis schließen">✕</button>
+  </div>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav" id="navbar" aria-label="Hauptnavigation">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="#hero" class="nav__logo" aria-label="Hanno Goens Handwerker Bremen">
+            <div class="nav__logo-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            Handwerker Bremen
+          </a>
+
+          <ul class="nav__links" id="nav-menu" role="list">
+            <li><a href="#leistungen"  class="nav__link">Leistungen</a></li>
+            <li><a href="#warum-wir"   class="nav__link">Über mich</a></li>
+            <li><a href="#ablauf"      class="nav__link">Ablauf</a></li>
+            <li><a href="#bewertungen" class="nav__link">Bewertungen</a></li>
+            <li>
+              <a href="https://wa.me/491794795285" target="_blank" rel="noopener" class="nav__wa" aria-label="WhatsApp-Nachricht senden">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.526 5.845L.057 23.846a.5.5 0 0 0 .608.608l6.001-1.469A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.51-5.27-1.4l-.38-.22-3.56.87.9-3.46-.25-.4A9.94 9.94 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="#kontakt" class="btn btn--primary" style="padding:9px 20px;font-size:.875rem;">Anfragen</a>
+            </li>
+          </ul>
+          <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <div class="hero__tag reveal">
+              <span aria-hidden="true"></span>
+              Ihr Handwerker in Bremen – Hanno Goens
+            </div>
+            <h1 class="hero__heading reveal" id="hero-heading" data-delay="60ms">
+              Pünktlich.<br>
+              Zuverlässig.<br>
+              <em>Sauber erledigt.</em>
+            </h1>
+            <p class="hero__sub reveal" data-delay="140ms">
+              Kleine und mittlere Reparaturen rund ums Haus –
+              von Wasserhahn bis Möbelmontage. Ich komme schnell,
+              arbeite sauber und gebe Ihnen einen fairen Festpreis.
+            </p>
+            <div class="hero__actions reveal" data-delay="220ms">
+              <a href="https://wa.me/491794795285" target="_blank" rel="noopener" class="btn btn--wa" aria-label="Jetzt per WhatsApp anfragen">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.526 5.845L.057 23.846a.5.5 0 0 0 .608.608l6.001-1.469A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.51-5.27-1.4l-.38-.22-3.56.87.9-3.46-.25-.4A9.94 9.94 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                Per WhatsApp anfragen
+              </a>
+              <a href="tel:01794795285" class="btn btn--outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.54 5.54l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                0179 – 479 52 85
+              </a>
+            </div>
+            <div class="hero__trust reveal" data-delay="320ms">
+              <div class="hero__trust-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Kostenloser Kostenvoranschlag
+              </div>
+              <div class="hero__trust-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Oft Festpreis möglich
+              </div>
+              <div class="hero__trust-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Rückruf noch heute
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__card-stack">
+              <div class="hero__card hero__card--main reveal" data-delay="180ms">
+                <div class="hero__card-icon">
+                  <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <p class="hero__card-title">Hanno Goens</p>
+                <p class="hero__card-sub">Allround-Handwerker · Bremen</p>
+                <div class="hero__rating">
+                  <span class="hero__star">★</span><span class="hero__star">★</span>
+                  <span class="hero__star">★</span><span class="hero__star">★</span>
+                  <span class="hero__star">★</span>
+                </div>
+              </div>
+              <div class="hero__card hero__card--stat reveal" data-delay="260ms">
+                <div class="hero__card-icon">
+                  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.14 8.14 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+                </div>
+                <p class="hero__card-title">WhatsApp</p>
+                <p class="hero__card-sub">Bevorzugter Kontakt</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="Auf einen Blick">
+      <ul class="stats__list" role="list">
+        <li class="stats__item reveal">
+          <span class="stats__num">9</span>
+          <span class="stats__label">Leistungen rund ums Haus</span>
+        </li>
+        <li class="stats__item reveal" data-delay="80ms">
+          <span class="stats__num">5 ★</span>
+          <span class="stats__label">Bewertungen von Kunden</span>
+        </li>
+        <li class="stats__item reveal" data-delay="160ms">
+          <span class="stats__num">Heute</span>
+          <span class="stats__label">Rückruf garantiert</span>
+        </li>
+        <li class="stats__item reveal" data-delay="240ms">
+          <span class="stats__num">Fair</span>
+          <span class="stats__label">Festpreise &amp; keine Überraschungen</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section" id="leistungen" aria-labelledby="leistungen-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-tag">Meine Leistungen</span>
+          <h2 class="section-heading reveal" id="leistungen-heading">Was ich für Sie erledige</h2>
+          <p class="section-sub reveal" data-delay="60ms">
+            Kleine und mittlere Reparaturen &amp; Montagearbeiten –
+            erledigt wie in den eigenen vier Wänden.
+          </p>
+        </div>
+
+        <ul class="services__grid" role="list">
+
+          <li class="service-card reveal" data-delay="0ms">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3 class="service-card__title">Verputz &amp; Mauerwerk</h3>
+            <p class="service-card__desc">Löcher und Risse in Wänden und Decken sauber auffüllen und verputzen – unsichtbar repariert.</p>
+          </li>
+
+          <li class="service-card reveal" data-delay="80ms">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="service-card__title">Türen, Fenster &amp; Schubladen</h3>
+            <p class="service-card__desc">Klemmende, quietschende oder schlecht schließende Türen, Fenster und Schubladen reparieren und justieren.</p>
+          </li>
+
+          <li class="service-card reveal" data-delay="160ms">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3 class="service-card__title">Möbel &amp; Lampen montieren</h3>
+            <p class="service-card__desc">Möbel aufbauen, Wohnaccessoires und Lampen montieren – schnell, sicher und gerade.</p>
+          </li>
+
+          <li class="service-card reveal" data-delay="240ms">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3 class="service-card__title">Wasserhahn &amp; Abfluss</h3>
+            <p class="service-card__desc">Tropfende Wasserhähne reparieren, verstopfte Abflüsse reinigen – damit das Wasser wieder richtig fließt.</p>
+          </li>
+
+          <li class="service-card reveal" data-delay="320ms">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="service-card__title">Fugen &amp; Abdichtung</h3>
+            <p class="service-card__desc">Silikon- und Fliesenfugen in Bad und Küche erneuern, Zugluft abdichten und Fliegengitter montieren.</p>
+          </li>
+
+          <li class="service-card reveal" data-delay="400ms">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </div>
+            <h3 class="service-card__title">Küchenmontage &amp; Gardinen</h3>
+            <p class="service-card__desc">Küchen aufbauen und anschließen, Gardinen auf- und abhängen, Bohrarbeiten aller Art.</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHY ME -->
+    <section class="why section" id="warum-wir" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="why__grid">
+          <div>
+            <span class="section-tag">Über mich</span>
+            <h2 class="section-heading reveal" id="why-heading">
+              Ein Handwerker,<br>dem Sie vertrauen.
+            </h2>
+            <p class="section-sub reveal" data-delay="60ms">
+              Mein Name ist <strong>Hanno Goens</strong>. Ich bin Ihr persönlicher
+              Ansprechpartner für alle Reparaturen in Bremen –
+              ehrlich, zuverlässig und ohne Umwege.
+            </p>
+            <ul class="why__list">
+              <li class="why-item reveal" data-delay="80ms">
+                <div class="why-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <h3 class="why-item__title">Schnelle Reaktionszeit</h3>
+                  <p class="why-item__desc">Ich melde mich noch heute zurück – per WhatsApp, SMS, Signal oder E-Mail.</p>
+                </div>
+              </li>
+              <li class="why-item reveal" data-delay="160ms">
+                <div class="why-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div>
+                  <h3 class="why-item__title">Fairer Festpreis</h3>
+                  <p class="why-item__desc">Oft kann ich vorab einen verbindlichen Festpreis nennen – keine Stundenabrechnungs-Überraschungen.</p>
+                </div>
+              </li>
+              <li class="why-item reveal" data-delay="240ms">
+                <div class="why-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                </div>
+                <div>
+                  <h3 class="why-item__title">Sauber &amp; respektvoll</h3>
+                  <p class="why-item__desc">Ich arbeite ordentlich, schütze Ihre Einrichtung und räume hinterher alles auf.</p>
+                </div>
+              </li>
+              <li class="why-item reveal" data-delay="320ms">
+                <div class="why-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div>
+                  <h3 class="why-item__title">Direkt &amp; unkompliziert</h3>
+                  <p class="why-item__desc">Kein Callcenter, kein Warteschleifen. Sie schreiben mir direkt – ich antworte persönlich.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="why__visual reveal" data-delay="100ms" aria-hidden="true">
+            <p class="why__visual-heading">So erreichen Sie mich am einfachsten:</p>
+            <ul class="why__checklist">
+              <li class="why__check">
+                <div class="why__check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>WhatsApp an 0179 – 479 52 85 (bevorzugt)</span>
+              </li>
+              <li class="why__check">
+                <div class="why__check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>SMS oder Signal an dieselbe Nummer</span>
+              </li>
+              <li class="why__check">
+                <div class="why__check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>E-Mail an hannogoens@gmx.de</span>
+              </li>
+              <li class="why__check">
+                <div class="why__check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>Kurz beschreiben, was zu tun ist – ich melde mich heute noch</span>
+              </li>
+              <li class="why__check">
+                <div class="why__check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>Kostenloser Kostenvoranschlag vorab</span>
+              </li>
+            </ul>
+            <div class="why__cta">
+              <a href="https://wa.me/491794795285" target="_blank" rel="noopener" class="btn btn--wa">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.14 8.14 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.526 5.845L.057 23.846a.5.5 0 0 0 .608.608l6.001-1.469A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.51-5.27-1.4l-.38-.22-3.56.87.9-3.46-.25-.4A9.94 9.94 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                Jetzt per WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process section section--alt" id="ablauf" aria-labelledby="ablauf-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-tag">So läuft es ab</span>
+          <h2 class="section-heading reveal" id="ablauf-heading">In 4 Schritten fertig</h2>
+          <p class="section-sub reveal" data-delay="60ms">Einfach, transparent und ohne Stress.</p>
+        </div>
+        <ol class="process__steps" aria-label="Ablauf in 4 Schritten">
+          <li class="process-step reveal" data-delay="0ms">
+            <div class="process-step__num" aria-hidden="true">1</div>
+            <h3 class="process-step__title">Kontakt aufnehmen</h3>
+            <p class="process-step__desc">WhatsApp, SMS, Signal oder E-Mail – kurz beschreiben, was zu tun ist.</p>
+          </li>
+          <li class="process-step reveal" data-delay="100ms">
+            <div class="process-step__num" aria-hidden="true">2</div>
+            <h3 class="process-step__title">Kostenvoranschlag</h3>
+            <p class="process-step__desc">Ich melde mich noch heute zurück – oft mit einem Festpreis vorab.</p>
+          </li>
+          <li class="process-step reveal" data-delay="200ms">
+            <div class="process-step__num" aria-hidden="true">3</div>
+            <h3 class="process-step__title">Termin vereinbaren</h3>
+            <p class="process-step__desc">Wir finden einen Termin, der zu Ihnen passt – oft schon am nächsten Tag.</p>
+          </li>
+          <li class="process-step reveal" data-delay="300ms">
+            <div class="process-step__num" aria-hidden="true">4</div>
+            <h3 class="process-step__title">Erledigt &amp; sauber</h3>
+            <p class="process-step__desc">Ich erledige alles fachgerecht, räume auf und Sie prüfen das Ergebnis.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials section" id="bewertungen" aria-labelledby="bewertungen-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-tag" style="color:#fdba74;">Kundenstimmen</span>
+          <h2 class="section-heading section-heading--light reveal" id="bewertungen-heading">Was Kunden sagen</h2>
+          <p class="section-sub section-sub--light reveal" data-delay="60ms">
+            Echte Bewertungen von Bremer Kunden – werden im finalen Projekt durch verifizierte Google-Bewertungen ersetzt.
+          </p>
+        </div>
+        <ul class="testimonials__grid" role="list">
+          <li class="testimonial-card reveal" data-delay="0ms">
+            <div class="testimonial-card__stars" aria-label="5 Sterne"><span>★★★★★</span></div>
+            <p class="testimonial-card__text">„Hanno hat meinen klemmenden Balkon-Türrahmen noch am selben Tag repariert. Sehr unkompliziert und wirklich faire Preise."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">MK</div>
+              <div>
+                <p class="testimonial-card__name">Muster-Kunde</p>
+                <p class="testimonial-card__location">Bremen – Platzhalter</p>
+              </div>
+            </div>
+          </li>
+          <li class="testimonial-card reveal" data-delay="120ms">
+            <div class="testimonial-card__stars" aria-label="5 Sterne"><span>★★★★★</span></div>
+            <p class="testimonial-card__text">„Fugensanierung im Bad – schnell, sauber, hält bombenfest. Hat mir vorab genau gesagt was es kostet, keine Überraschungen."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">SL</div>
+              <div>
+                <p class="testimonial-card__name">Muster-Kundin</p>
+                <p class="testimonial-card__location">Bremen – Platzhalter</p>
+              </div>
+            </div>
+          </li>
+          <li class="testimonial-card reveal" data-delay="240ms">
+            <div class="testimonial-card__stars" aria-label="5 Sterne"><span>★★★★★</span></div>
+            <p class="testimonial-card__text">„Komplette Küchenmontage, alles perfekt. Pünktlich, freundlich und hinterher war alles aufgeräumt. Absolut empfehlenswert!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">TH</div>
+              <div>
+                <p class="testimonial-card__name">Muster-Kunde</p>
+                <p class="testimonial-card__location">Bremen – Platzhalter</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__heading reveal" id="cta-heading">Etwas zu reparieren?</h2>
+          <p class="cta-banner__sub reveal" data-delay="60ms">
+            Schreiben Sie mir einfach eine WhatsApp – ich melde mich noch heute
+            und nenne Ihnen einen fairen Preis.
+          </p>
+          <div class="cta-banner__actions reveal" data-delay="120ms">
+            <a href="https://wa.me/491794795285" target="_blank" rel="noopener" class="btn btn--white">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25d366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.14 8.14 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.526 5.845L.057 23.846a.5.5 0 0 0 .608.608l6.001-1.469A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.51-5.27-1.4l-.38-.22-3.56.87.9-3.46-.25-.4A9.94 9.94 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+              WhatsApp öffnen
+            </a>
+            <a href="tel:01794795285" class="btn btn--dark">0179 – 479 52 85 anrufen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="kontakt" aria-labelledby="kontakt-heading">
+      <div class="container">
+        <div class="contact__grid">
+
+          <div class="contact__info">
+            <div>
+              <span class="section-tag">Kontakt</span>
+              <h2 class="contact__info-heading reveal" id="kontakt-heading">Schreiben Sie mir.</h2>
+              <p class="contact__info-sub reveal" data-delay="60ms">
+                Am schnellsten erreichen Sie mich per WhatsApp oder SMS.
+                Ich antworte persönlich – noch am selben Tag.
+              </p>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+
+              <div class="contact-item reveal" data-delay="80ms">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.54 5.54l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div>
+                  <p class="contact-item__label">Telefon / WhatsApp</p>
+                  <p class="contact-item__val"><a href="tel:01794795285">0179 – 479 52 85</a></p>
+                  <p class="contact-item__hint">
+                    <span class="wa-badge">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.14 8.14 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.526 5.845L.057 23.846a.5.5 0 0 0 .608.608l6.001-1.469A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.51-5.27-1.4l-.38-.22-3.56.87.9-3.46-.25-.4A9.94 9.94 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                      WhatsApp &amp; SMS bevorzugt
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item reveal" data-delay="140ms">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <p class="contact-item__label">E-Mail</p>
+                  <p class="contact-item__val"><a href="mailto:hannogoens@gmx.de">hannogoens@gmx.de</a></p>
+                </div>
+              </div>
+
+              <div class="contact-item reveal" data-delay="200ms">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <p class="contact-item__label">Adresse</p>
+                  <p class="contact-item__val">Brokstraße 42, Bremen</p>
+                  <p class="contact-item__hint">Einsatzgebiet: Bremen &amp; Umgebung</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="reveal" data-delay="100ms">
+            <form class="contact-form" id="contact-form" novalidate aria-label="Kontaktformular">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="c-name" class="form-label">Ihr Name *</label>
+                  <input type="text" id="c-name" name="name" class="form-input" autocomplete="name" required aria-required="true" placeholder="Max Mustermann">
+                </div>
+                <div class="form-group">
+                  <label for="c-phone" class="form-label">Telefon / WhatsApp</label>
+                  <input type="tel" id="c-phone" name="phone" class="form-input" autocomplete="tel" placeholder="0179 …">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="c-email" class="form-label">E-Mail *</label>
+                <input type="email" id="c-email" name="email" class="form-input" autocomplete="email" required aria-required="true" placeholder="ihre@email.de">
+              </div>
+              <div class="form-group">
+                <label for="c-service" class="form-label">Was soll erledigt werden?</label>
+                <select id="c-service" name="service" class="form-select">
+                  <option value="">Bitte wählen…</option>
+                  <option>Verputz &amp; Mauerwerk</option>
+                  <option>Türen, Fenster oder Schubladen</option>
+                  <option>Möbel- oder Lampenmontage</option>
+                  <option>Wasserhahn oder Abfluss</option>
+                  <option>Fugen &amp; Abdichtung</option>
+                  <option>Küchenmontage oder Gardinen</option>
+                  <option>Bohrarbeiten</option>
+                  <option>Sonstiges</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="c-message" class="form-label">Kurze Beschreibung *</label>
+                <textarea id="c-message" name="message" class="form-textarea" required aria-required="true" placeholder="z.B. Badezimmer-Silikonfugen sind schwarz geworden, ca. 2 Meter Dusche …"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">
+                Anfrage absenden
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <p class="form-disclaimer">Kostenlos &amp; unverbindlich · Antwort noch heute · Keine Datenweitergabe</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <div class="footer__logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            Hanno Goens
+          </div>
+          <p>Ihr Handwerker für Reparaturen in Bremen – pünktlich, zuverlässig, schnell. Brokstraße 42, Bremen.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Leistungen</p>
+          <ul class="footer__links" role="list">
+            <li><a href="#leistungen" class="footer__link">Verputz &amp; Mauerwerk</a></li>
+            <li><a href="#leistungen" class="footer__link">Türen &amp; Fenster</a></li>
+            <li><a href="#leistungen" class="footer__link">Möbel &amp; Lampen</a></li>
+            <li><a href="#leistungen" class="footer__link">Wasserhahn &amp; Abfluss</a></li>
+            <li><a href="#leistungen" class="footer__link">Küchenmontage</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="#warum-wir"   class="footer__link">Über mich</a></li>
+            <li><a href="#ablauf"      class="footer__link">Ablauf</a></li>
+            <li><a href="#bewertungen" class="footer__link">Bewertungen</a></li>
+            <li><a href="#kontakt"     class="footer__link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <ul class="footer__links" role="list">
+            <li><a href="https://wa.me/491794795285" class="footer__link" target="_blank" rel="noopener">WhatsApp (bevorzugt)</a></li>
+            <li><a href="tel:01794795285"            class="footer__link">0179 – 479 52 85</a></li>
+            <li><a href="mailto:hannogoens@gmx.de"   class="footer__link">hannogoens@gmx.de</a></li>
+            <li><span class="footer__link" style="cursor:default">Brokstraße 42, Bremen</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Hanno Goens – Handwerker Bremen. Alle Rechte vorbehalten.</p>
+        <div class="footer__legal">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/491794795285" target="_blank" rel="noopener" class="wa-float" aria-label="Jetzt per WhatsApp anfragen">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.14 8.14 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.526 5.845L.057 23.846a.5.5 0 0 0 .608.608l6.001-1.469A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.92 0-3.72-.51-5.27-1.4l-.38-.22-3.56.87.9-3.46-.25-.4A9.94 9.94 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+    <span>WhatsApp anfragen</span>
+  </a>
+
+  <script>
+    /* Demo bar */
+    const demoBar = document.getElementById('demo-bar');
+    document.body.classList.add('has-demo-bar');
+    document.getElementById('demo-close').addEventListener('click', () => {
+      demoBar.remove();
+      document.body.classList.remove('has-demo-bar');
+    });
+
+    /* Nav scroll */
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => navbar.classList.toggle('is-scrolled', window.scrollY > 48);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* Mobile nav */
+    const toggle = document.getElementById('nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    /* Reveal */
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.style.transitionDelay = e.target.dataset.delay || '0ms';
+        e.target.classList.add('is-visible');
+        revealObs.unobserve(e.target);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* Form */
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type=submit]');
+      btn.textContent = '✓ Anfrage gesendet!';
+      btn.style.background = '#16a34a';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = 'Anfrage absenden <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>

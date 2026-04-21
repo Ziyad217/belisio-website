@@ -1,4 +1,4 @@
-belisio.de, www.belisio.de {
+:80 {
     root * /srv
     file_server
     encode gzip
