@@ -141,29 +141,26 @@
   // Available time slots
   const TIME_SLOTS = ['09:00','10:00','11:00','14:00','15:00','16:00','17:00'];
 
-  // Simulate some booked slots — keyed by "YYYY-MM-DD"
-  // We'll randomly mark ~30% of slots as booked per day
-  const bookedCache = {};
+  const slotsCache = {};
 
-  function getBookedSlots(dateStr) {
-    if (!bookedCache[dateStr]) {
-      bookedCache[dateStr] = TIME_SLOTS.filter(() => Math.random() < 0.3);
+  async function fetchSlots(dateStr) {
+    if (slotsCache[dateStr]) return slotsCache[dateStr];
+    try {
+      const res  = await fetch(`${APPS_SCRIPT_URL}?date=${dateStr}`);
+      const data = await res.json();
+      slotsCache[dateStr] = data;
+      return data;
+    } catch {
+      return { free: TIME_SLOTS, booked: [] };
     }
-    return bookedCache[dateStr];
   }
 
-  // A day is "available" if it's Mon–Fri, not in the past, and has free slots
   function isDayAvailable(date) {
     const today = new Date();
     today.setHours(0,0,0,0);
     if (date < today) return false;
-
-    const dow = date.getDay(); // 0=Sun, 6=Sat
-    if (dow === 0 || dow === 6) return false;
-
-    const dateStr = toDateStr(date);
-    const booked  = getBookedSlots(dateStr);
-    return booked.length < TIME_SLOTS.length; // at least one free
+    const dow = date.getDay();
+    return dow !== 0 && dow !== 6;
   }
 
   function toDateStr(date) {
@@ -301,18 +298,25 @@
   }
 
   /* Date selected → show time slots */
-  function selectDate(date, cell) {
+  async function selectDate(date, cell) {
     selectedDate    = date;
     selectedDateStr = toDateStr(date);
 
-    // Update calendar highlight
     calGrid.querySelectorAll('.cal-day--selected').forEach(el => el.classList.remove('cal-day--selected'));
     cell.classList.add('cal-day--selected');
 
-    // Populate slots
     slotsDate.textContent = formatDateDE(date);
-    const booked = getBookedSlots(selectedDateStr);
+    slotsGrid.innerHTML = '<p style="color:var(--color-muted);font-size:13px;padding:8px 0;">Lade Termine…</p>';
+    goToStep(2);
+
+    const { free = TIME_SLOTS, booked = [] } = await fetchSlots(selectedDateStr);
+
     slotsGrid.innerHTML = '';
+
+    if (free.length === 0) {
+      slotsGrid.innerHTML = '<p style="color:var(--color-muted);font-size:13px;padding:8px 0;">Keine freien Termine an diesem Tag.</p>';
+      return;
+    }
 
     TIME_SLOTS.forEach(slot => {
       const btn = document.createElement('button');
@@ -331,8 +335,6 @@
 
       slotsGrid.appendChild(btn);
     });
-
-    goToStep(2);
   }
 
   /* Slot selected → show form */
