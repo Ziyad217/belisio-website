@@ -1,6 +1,6 @@
 services:
   web:
-    build: .
+    image: ghcr.io/ziyad217/belisio-website:latest
     restart: unless-stopped
     networks:
       - n8n_default
