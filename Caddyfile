@@ -1,0 +1,5 @@
+belisio.de, www.belisio.de {
+    root * /srv
+    file_server
+    encode gzip
+}
