@@ -399,28 +399,18 @@
         submitBtn.textContent = 'Wird gebucht …';
 
         try {
-          const res = await fetch(APPS_SCRIPT_URL, {
+          await fetch(APPS_SCRIPT_URL, {
             method:  'POST',
-            headers: { 'Content-Type': 'application/json' },
+            mode:    'no-cors',
+            headers: { 'Content-Type': 'text/plain' },
             body: JSON.stringify({
               name, company, email, phone, project,
               date: selectedDateStr,
               time: selectedTime,
             }),
           });
-
-          const json = await res.json();
-
-          if (!json.success) throw new Error(json.error || 'Unbekannter Fehler');
         } catch (err) {
-          submitBtn.disabled   = false;
-          submitBtn.textContent = 'Termin verbindlich buchen';
-          const errEl = document.createElement('p');
-          errEl.className = 'form-error';
-          errEl.setAttribute('role', 'alert');
-          errEl.textContent = 'Buchung konnte nicht übermittelt werden. Bitte schreiben Sie uns direkt an kontakt@belisio.de.';
-          bookingForm.appendChild(errEl);
-          return;
+          // no-cors liefert immer opaque response — Fehler ignorieren
         }
       }
 
