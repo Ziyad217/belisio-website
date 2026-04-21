@@ -1,6 +1,16 @@
 services:
   web:
     build: .
-    ports:
-      - "8080:80"
     restart: unless-stopped
+    networks:
+      - n8n_default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.belisio.rule=Host(`belisio.de`) || Host(`www.belisio.de`)"
+      - "traefik.http.routers.belisio.entrypoints=websecure"
+      - "traefik.http.routers.belisio.tls.certresolver=letsencrypt"
+      - "traefik.http.services.belisio.loadbalancer.server.port=80"
+
+networks:
+  n8n_default:
+    external: true
