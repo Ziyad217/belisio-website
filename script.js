@@ -132,7 +132,7 @@
    * Anleitung: booking-backend.gs im Projekt-Ordner lesen.
    * Beispiel: 'https://script.google.com/macros/s/AKfycb.../exec'
    */
-  const APPS_SCRIPT_URL = ''; // ← HIER die URL nach dem Deploy eintragen
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-2YImvWAZCEfjlCY5fkyfLCu1dUCaSDH847vo9qdKuWp7S1tLFY7uI8gNgKXKITNE/exec';
 
   const MONTHS_DE = [
     'Januar','Februar','März','April','Mai','Juni',
