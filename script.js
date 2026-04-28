@@ -294,18 +294,6 @@
       calGrid.appendChild(cell);
     }
 
-    // Legend
-    let legend = widget.querySelector('.booking-calendar__legend');
-    if (!legend) {
-      legend = document.createElement('div');
-      legend.className = 'booking-calendar__legend';
-      legend.setAttribute('aria-hidden', 'true');
-      legend.innerHTML = `
-        <span class="legend-item"><span class="legend-dot legend-dot--available"></span>Verfügbar</span>
-        <span class="legend-item"><span class="legend-dot legend-dot--unavailable"></span>Ausgebucht</span>
-      `;
-      step1.querySelector('.booking-calendar').appendChild(legend);
-    }
   }
 
   /* Date selected → show time slots */
